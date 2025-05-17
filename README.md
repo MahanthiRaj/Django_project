@@ -1,5 +1,7 @@
 # Django_project# Django
+
 Mahanthi: creating a repo, created a database and a html page
+
 pranay: created a logic in urls.py and views.py, configuring in settings.py
 
 step-1 :created a repository named  Django_project
