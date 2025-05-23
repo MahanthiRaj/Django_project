@@ -4,7 +4,6 @@ from django.template import loader
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 
-
 def andhra(request):
     return HttpResponse("The list of Andhra Dishes")
 def tamil(request):
