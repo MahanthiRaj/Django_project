@@ -9,7 +9,7 @@ from django.urls import path
 urlpatterns = [
     path('andhra/',andhra, name ='andhra'),
     path('tamil/',tamil, name ='tamil'),
-    path('north/',northindian, name ='north-indian'),
+    path('north/',northindian, name ='north'),
     path('cuisine/',Indiancuisine, name ='Indian-cuisine'),
     path('login/', login_view, name = 'Login'),
     path('signup/',signup, name = 'Signup')

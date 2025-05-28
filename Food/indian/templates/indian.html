@@ -1,11 +1,18 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
-    <body>
-        <h1>Welcome to the great indian cuisine</h1>
-        {% load static %}
-        <img src="{% static 'login_image.jpg' %}" alt="login_image" style="width: 200px; height: auto; display: block; margin-bottom: 20px;">
-        <h2>           andhra meals            </h2>
-        <h3> Indian </h3>
-        <p1>The list of all the Andhra Dishes</p1>
-    </body>
+<head>
+    <title>Indian Cuisine</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the great Indian cuisine</h1>
+        <div class="button-group">
+            <a href="{% url 'andhra' %}"><button>Andhra Dishes</button></a>
+            <a href="{% url 'tamil' %}"><button>Tamil Dishes</button></a>
+            <a href="{% url 'north' %}"><button>North Indian Dishes</button></a>
+        </div>
+    </div>
+</body>
 </html>

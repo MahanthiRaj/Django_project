@@ -1,0 +1,45 @@
+body {
+    background-image: url("/static/login_image.jpg");
+    background-size: auto;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+    padding-top: 100px;
+    color: red;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.dish-image {
+    display: block;
+    margin: 10px auto;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+
+
+.button-group {
+    margin-top: 30px;
+}
+
+.button-group button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
