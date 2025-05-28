@@ -4,12 +4,6 @@ from django.template import loader
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 
-def andhra(request):
-    return HttpResponse("The list of Andhra Dishes")
-def tamil(request):
-    return HttpResponse("The list of tamil Dishes")
-def northindian(request):
-    return HttpResponse("The list of North indian Dishes")
 def Indiancuisine(request):
     template = loader.get_template('indian.html')
     return HttpResponse(template.render())
@@ -38,3 +32,15 @@ def signup(request):
         messages.success(request, "sign up successful, Now you can login")
         return redirect('login')
     return render(request,'sign.html')
+
+def home(request):
+    return render(request, 'index.html')
+
+def andhra(request):
+    return render(request, 'andhra.html')
+
+def tamil(request):
+    return render(request, 'tamil.html')
+
+def northindian(request):
+    return render(request, 'northindian.html')
