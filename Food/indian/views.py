@@ -3,17 +3,16 @@ from django.http import HttpResponse
 from django.template import loader
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
+from django.contrib.auth.models import User
 
 def andhra(request):
     return HttpResponse("The list of Andhra Dishes")
 def tamil(request):
     return HttpResponse("The list of tamil Dishes")
 def northindian(request):
-    return HttpResponse("The list of North indian Dishes")
+    return render(request, 'north.html')
 def Indiancuisine(request):
-    return render(request,'indian.html')
-
-
+    return render(request,'indian')
     
 
 def login_view(request):
@@ -32,12 +31,22 @@ def login_view(request):
 def signup(request):
     if request.method == 'POST':
         username = request.POST.get('username')
-        password = request.POST.get('password')
-        if user.object.filter(username = username, password = password):
-            messages.erroe(request, "username already exixts.")
-            return redirect('login')
-        user.object.create_user(username = username, password = password)
-        messages.success(request, "sign up successful, Now you can login")
-        return redirect('login')
-    return render(request,'sign.html')
+        email = request.POST.get('email')
+        password1 = request.POST.get('password1')
+        password2 = request.POST.get('password2')
+
+        print("Username:", username) 
+
+        if User.objects.filter(username=username).exists():
+            messages.error(request, 'Username already taken')
+            return render(request, 'signup.html')
+
+        if password1 != password2:
+            messages.error(request, 'Passwords do not match')
+            return render(request, 'signup.html')
+
+        user = User.objects.create_user(username=username, email=email, password=password1)
+        user.save()
+        return redirect('indian')
+    return render(request, 'signup.html')
 
