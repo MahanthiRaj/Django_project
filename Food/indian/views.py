@@ -11,8 +11,10 @@ def tamil(request):
 def northindian(request):
     return HttpResponse("The list of North indian Dishes")
 def Indiancuisine(request):
-    template = loader.get_template('indian.html')
-    return HttpResponse(template.render())
+    return render(request,'indian.html')
+
+
+    
 
 def login_view(request):
     if request.method == 'POST':
@@ -38,3 +40,4 @@ def signup(request):
         messages.success(request, "sign up successful, Now you can login")
         return redirect('login')
     return render(request,'sign.html')
+

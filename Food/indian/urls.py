@@ -10,7 +10,7 @@ urlpatterns = [
     path('andhra/',andhra, name ='andhra'),
     path('tamil/',tamil, name ='tamil'),
     path('north/',northindian, name ='north-indian'),
-    path('cuisine/',Indiancuisine, name ='Indian-cuisine'),
+    path('cuisine/',Indiancuisine, name ='indian'),
     path('login/', login_view, name = 'Login'),
     path('signup/',signup, name = 'Signup')
 ]
