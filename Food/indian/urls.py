@@ -7,6 +7,7 @@ from indian.views import Indiancuisine
 from django.urls import path
 
 urlpatterns = [
+    path('signup/', signup, name='Signup'),
     path('andhra/',andhra, name ='andhra'),
     path('tamil/',tamil, name ='tamil'),
     path('north/',northindian, name ='north'),
