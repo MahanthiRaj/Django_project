@@ -4,9 +4,18 @@ from django.template import loader
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 
+<<<<<<< HEAD
+=======
+def andhra(request):
+    return HttpResponse("The list of Andhra Dishes")
+def tamil(request):
+    return HttpResponse("The list of tamil Dishes")
+>>>>>>> fbc61df (mahanthi)
 def Indiancuisine(request):
     template = loader.get_template('indian.html')
     return HttpResponse(template.render())
+def northindian(request):
+    return render(request, 'north.html')
 
 def login_view(request):
     if request.method == 'POST':
@@ -31,6 +40,7 @@ def signup(request):
         user.object.create_user(username = username, password = password)
         messages.success(request, "sign up successful, Now you can login")
         return redirect('login')
+<<<<<<< HEAD
     return render(request,'sign.html')
 
 def home(request):
@@ -44,3 +54,6 @@ def tamil(request):
 
 def northindian(request):
     return render(request, 'northindian.html')
+=======
+    return render(request,'Signup.html')
+>>>>>>> fbc61df (mahanthi)

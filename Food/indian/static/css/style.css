@@ -1,0 +1,125 @@
+body.login-page {
+    font-family: Arial, sans-serif;
+    background: url('../login_page.jpg');
+    background-size: cover;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h2 {
+    color: black;
+}
+
+form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px black;
+    width: 300px;
+    text-align: center;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid white;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: green;
+}
+
+p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+a {
+    color: y;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: whitesmoke;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 30px;
+    color: red;
+}
+
+.dish-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.dish {
+    background: white;
+    border: 1px solid seagreen;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 240px;
+    text-align: center;
+    
+}
+
+
+
+.dish img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-bottom: 1px solid;
+}
+
+.dish h3 {
+    margin: 10px 0 5px;
+    color: cadetblue;
+}
+
+.dish p {
+    margin: 0 10px 10px;
+    color: black;
+    font-size: 14px;
+}
+
+.price {
+    color: green;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
