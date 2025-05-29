@@ -1,76 +1,152 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Andhra Cuisine</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
-<body>
-    <div class="container">
-        <h1>Andhra Cuisine Dishes</h1>
-        <p>Welcome to spicy and flavorful Andhra food</p>
-        <div class="dish-grid">
-            <div class="dish">
-                <img src="{% static 'Andhra/chicken bir.jpg' %}" alt="Andhra Biryani">
-                <h2>Andhra Chicken Biryani</h2>
-                <p>Spicy rice dish with Andhra flavors.</p>
-                <p class="price">₹250</p>
+<body class="andhra-page">
+    
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h1 class="display-4">Andhra Cuisine Dishes</h1>
+            <p class="lead">Welcome to spicy and flavorful Andhra food</p>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'Andhra/chicken bir.jpg' %}" class="card-img-top" alt="Andhra Chicken Biryani">
+                    <div class="card-body">
+                        <h5 class="card-title">Andhra Chicken Biryani</h5>
+                        <p class="card-text">Spicy rice dish with Andhra flavors.</p>
+                        
+                    </div>
+                    <div class="card-footer"><small class="text-muted">$10</small></div>
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
             </div>
-            <div class="dish">
-                <img src="{% static 'Andhra/chepala pulusu.jpg' %}" alt="Andhra Chicken Curry">
-                <h3>Chepala Pulusu</h3>
-                <p>tangy tamarind juice and earthy masalas blend with local caught fish</p>
-                <p class="price">₹270</p>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'Andhra/chepala pulusu.jpg' %}" class="card-img-top" alt="Chepala Pulusu">
+                    <div class="card-body">
+                        <h5 class="card-title">Chepala Pulusu</h5>
+                        <p class="card-text">Tangy tamarind juice and earthy masalas blend with locally caught fish.</p>
+                       
+                    </div>
+                    <div class="card-footer"><small class="text-muted">$15</small></div>
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
             </div>
-            <div class="dish">
-                <img src="{% static 'Andhra/natukodi.jpg' %}" alt="Gongura Mutton">
-                <h2>Natu Kodi Iguru</h2>
-                <p>rich and hearty curry is a popular staple in many Andhra households..</p>
-                <p class="price">₹320</p>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'Andhra/natukodi.jpg' %}" class="card-img-top" alt="Natu Kodi Iguru">
+                    <div class="card-body">
+                        <h5 class="card-title">Natu Kodi Iguru</h5>
+                        <p class="card-text">A rich and hearty curry, popular in many Andhra households.</p>
+                        
+                    </div>
+                    <div class="card-footer"><small class="text-muted">$20</small></div>
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
             </div>
-            <div class="dish">
-                <img src="{% static 'Andhra/koramenu.jpg' %}" alt="Pesarattu">
-                <h2>Korameenu Vepudu</h2>
-                <p>deliciously spicy Korameenu Vepudu, a traditional Murrel fish fry.</p>
-                <p class="price">₹130</p>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'Andhra/koramenu.jpg' %}" class="card-img-top" alt="Korameenu Vepudu">
+                    <div class="card-body">
+                        <h5 class="card-title">Korameenu Vepudu</h5>
+                        <p class="card-text">Deliciously spicy Murrel fish fry, a regional favorite.</p>
+                        
+                    </div>
+                    <div class="card-footer"><small class="text-muted">$20</small></div>
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
             </div>
-            <div class="dish">
-                <img src="{% static 'Andhra/mutton.jpg' %}" alt="Ulavacharu">
-                <h2>Gongura Mutton</h2>
-                <p>The earthy flavours of mutton blend gorgeously with the piquant sourness of Gongura.</p>
-                <p class="price">₹180</p>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'Andhra/mutton.jpg' %}" class="card-img-top" alt="Gongura Mutton">
+                    <div class="card-body">
+                        <h5 class="card-title">Gongura Mutton</h5>
+                        <p class="card-text">Mutton cooked with tangy gongura leaves—spicy and satisfying.</p>
+                        
+                    </div>
+                    <div class="card-footer"><small class="text-muted">$15</small></div>
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
             </div>
-            <div class="dish">
-                <img src="{% static 'Andhra/puli.jpg' %}" alt="Andhra Chicken Curry">
-                <h2>Pulihora</h2>
-                <p>Pulihora is a spicy and tangy rice preparation made with tamarind paste as the main ingredient, mixed with cooked rice.</p>
-                <p class="price">₹270</p>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'Andhra/puli.jpg' %}" class="card-img-top" alt="Pulihora">
+                    <div class="card-body">
+                        <h5 class="card-title">Pulihora</h5>
+                        <p class="card-text">A spicy, tangy rice dish made with tamarind paste and tempered spices.</p>
+                        
+                    </div>
+                    <div class="card-footer"><small class="text-muted">$12</small></div>
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
             </div>
-            <div class="dish">
-                <img src="{% static 'Andhra/gutti.jpg' %}" alt="Andhra Chicken Curry">
-                <h2>Gutti Vankaya Koora</h2>
-                <p>spicy stuffed eggplant curry.</p>
-                <p class="price">₹270</p>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'Andhra/gutti.jpg' %}" class="card-img-top" alt="Gutti Vankaya Koora">
+                    <div class="card-body">
+                        <h5 class="card-title">Gutti Vankaya Koora</h5>
+                        <p class="card-text">Spicy stuffed eggplant curry with roasted masala.</p>
+                        
+                    </div>
+                    <div class="card-footer"><small class="text-muted">$10</small></div>
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
             </div>
-            <div class="dish">
-                <img src="{% static 'Andhra/donda.jpg' %}" alt="Andhra Chicken Curry">
-                <h2>Dondakaya fry</h2>
-                <p>The ivy gourds are thinly sliced and then stir-fried with nuts and spices until they achieve a wonderful blend.</p>
-                <p class="price">₹270</p>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'Andhra/donda.jpg' %}" class="card-img-top" alt="Dondakaya Fry">
+                    <div class="card-body">
+                        <h5 class="card-title">Dondakaya Fry</h5>
+                        <p class="card-text">Ivy gourd stir-fried with spices and crunchy nuts.</p>  
+                    </div>
+                    <div class="card-footer"><small class="text-muted">$8</small></div>
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
             </div>
-            <div class="dish">
-                <img src="{% static 'Andhra/ulava.jpg' %}" alt="Andhra Chicken Curry">
-                <h2>Ulava Charu</h2>
-                <p>Ulava Charu is also celebrated for its nutritional benefits.</p>
-                <p class="price">₹270</p>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'Andhra/ulava.jpg' %}" class="card-img-top" alt="Ulava Charu">
+                    <div class="card-body">
+                        <h5 class="card-title">Ulava Charu</h5>
+                        <p class="card-text">A nourishing and flavorful horse gram stew.</p>
+                        
+                    </div>
+                    <div class="card-footer"><small class="text-muted">$15</small></div>
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
             </div>
-            <div class="dish">
-                <img src="{% static 'Andhra/royya.jpg' %}" alt="Andhra Chicken Curry">
-                <h2>Royyala vepudu</h2>
-                <p>Royyala Veppudu, a renowned dish hailing from Andhra Pradesh, is a culinary delight that seafood enthusiasts absolutely adore.</p>
-                <p class="price">₹270</p>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'Andhra/royya.jpg' %}" class="card-img-top" alt="Royyala Vepudu">
+                    <div class="card-body">
+                        <h5 class="card-title">Royyala Vepudu</h5>
+                        <p class="card-text">Spicy prawn stir-fry—a seafood lover’s delight from Andhra.</p>
+                    </div>
+                    <div class="card-footer"><small class="text-muted">$15</small></div>
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
             </div>
+
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

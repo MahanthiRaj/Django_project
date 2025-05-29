@@ -1,76 +1,143 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>North Indian Cuisine</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
-<body>
-    <div class="container">
-        <h1>North Indian Cuisine Dishes</h1>
-        <p>Welcome to spicy and flavorful North Indian food</p>
-        <div class="dish-grid">
-            <div class="dish">
-                <img src="{% static 'north/Rajma.jpg' %}" alt="Rajma">
-                <h3>Rajma Masala</h3>
-                <p>This Indian vegetarian-friendly delight provides both a filling effect and many nutrients, especially proteins .</p>
-                <p class="price">$10</p>
+<body class="north-indian-page">
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h1 class="display-4">North Indian Cuisine Dishes</h1>
+            <p class="lead">Welcome to spicy and flavorful North Indian food</p>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'north/Rajma.jpg' %}" class="card-img-top" alt="Rajma Masala">
+                    <div class="card-body">
+                        <h5 class="card-title">Rajma Masala</h5>
+                        <p class="card-text">This Indian vegetarian-friendly delight provides both a filling effect and many nutrients, especially proteins.</p>
+                    </div>
+                    <div class="card-footer"><small class="text-muted">$10</small></div>
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
             </div>
-            <div class="dish">
-                <img src="{% static 'north/chole.jpg' %}" alt="chole">
-                <h3>Chole Bhature</h3>
-                <p>It is a combination of two elements Chole, which is a spicy chickpea Curry, and Bhature, which is a deep-fried leavened bread</p>
-                <p class="price">$15</p>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'north/chole.jpg' %}" class="card-img-top" alt="Chole Bhature">
+                    <div class="card-body">
+                        <h5 class="card-title">Chole Bhature</h5>
+                        <p class="card-text">A spicy chickpea curry served with deep-fried leavened bread.</p>
+                    </div>
+                    <div class="card-footer"><small class="text-muted">$12</small></div>
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
             </div>
-            <div class="dish">
-                <img src="{% static 'north/andey.jpg' %}" alt="andey">
-                <h3>Andey ki curry</h3>
-                <p>Boiled eggs matching with spiced tomato-based gravy</p>
-                <p class="price">$15</p>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'north/andey.jpg' %}" class="card-img-top" alt="Andey ki Curry">
+                    <div class="card-body">
+                        <h5 class="card-title">Andey ki Curry</h5>
+                        <p class="card-text">Boiled eggs in a spiced tomato-based gravy.</p>
+                    </div>
+                    <div class="card-footer"><small class="text-muted">@10</small></div>
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
             </div>
-            <div class="dish">
-                <img src="{% static 'north/aloo_gobi.jpg' %}" alt="Aloo Gobi">
-                <h3>Aloo Gobi</h3>
-                <p>Aloo Gobi is a dry Curry with not very much sauce and delivers a bold flavor from red chili powder/Garam Masala and the yellow hue from turmeric.</p>
-                <p class="price">$10</p>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'north/aloo_gobi.jpg' %}" class="card-img-top" alt="Aloo Gobi">
+                    <div class="card-body">
+                        <h5 class="card-title">Aloo Gobi</h5>
+                        <p class="card-text">Dry curry with bold flavor from chili powder and turmeric.</p>
+                    </div>
+                    <div class="card-footer"><small class="text-muted">$8</small></div>
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
             </div>
-            <div class="dish">
-                <img src="{% static 'north/rogan.jpg' %}" alt="Rogan">
-                <h3>Rogon Gosh</h3>
-                <p>The name of this food, Rogan Josh, is the combination of “clarified butter/oil” with “stew/braise,”</p>
-                <p class="price">$20</p>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'north/rogan.jpg' %}" class="card-img-top" alt="Rogan Gosh">
+                    <div class="card-body">
+                        <h5 class="card-title">Rogan Gosh</h5>
+                        <p class="card-text">Rich lamb stew combining clarified butter with spices.</p>
+                    </div>
+                    <div class="card-footer"><small class="text-muted">$15</small></div>
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
             </div>
-            <div class="dish">
-                <img src="{% static 'north/tandoori.jpg' %}" alt="tandoori">
-                <h3>Tandoor Chicken</h3>
-                <p>Tandoor is a clay oven used in South Asian cooking</p>
-                <p class="price">$20</p>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'north/tandoori.jpg' %}" class="card-img-top" alt="Tandoori Chicken">
+                    <div class="card-body">
+                        <h5 class="card-title">Tandoori Chicken</h5>
+                        <p class="card-text">Chicken marinated in yogurt and spices, cooked in a clay oven.</p>
+                    </div>
+                    <div class="card-footer"><small class="text-muted">$12</small></div>
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
             </div>
-            <div class="dish">
-                <img src="{% static 'north/murgh.jpg' %}" alt="murgh">
-                <h3>Murgh Makhani</h3>
-                <p>This Butter Chicken dish is less spicy and contains a less robust aroma than the other suggested Curries..</p>
-                <p class="price">$15</p>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'north/murgh.jpg' %}" class="card-img-top" alt="Murgh Makhani">
+                    <div class="card-body">
+                        <h5 class="card-title">Murgh Makhani</h5>
+                        <p class="card-text">Creamy butter chicken with mild spices and rich sauce.</p>
+                    </div>
+                    <div class="card-footer"><small class="text-muted">$15</small></div>
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
             </div>
-            <div class="dish">
-                <img src="{% static 'north/dak muk.jpg' %}" alt="dak muk">
-                <h3>Dal Makhani</h3>
-                <p> healthy and weight-loss assisting food to enhance their daily diets.</p>
-                <p class="price">$10</p>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'north/dal muk.jpg' %}" class="card-img-top" alt="Dal Makhani">
+                    <div class="card-body">
+                        <h5 class="card-title">Dal Makhani</h5>
+                        <p class="card-text">Rich and buttery lentil curry known for its creamy taste.</p>
+                    </div>
+                    <div class="card-footer"><small class="text-muted">$10</small></div>
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
             </div>
-            <div class="dish">
-                <img src="{% static 'north/malai.jpg' %}" alt="malai">
-                <h3>Malai Kofta</h3>
-                <p>fry the balls until they have crusty golden brown sears before tossing them in thickened gravy.</p>
-                <p class="price">$15</p>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'north/malai.jpg' %}" class="card-img-top" alt="Malai Kofta">
+                    <div class="card-body">
+                        <h5 class="card-title">Malai Kofta</h5>
+                        <p class="card-text">Golden fried cottage cheese balls in rich gravy.</p>
+                    </div>
+                    <div class="card-footer"><small class="text-muted">$12</small></div>
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
             </div>
-            <div class="dish">
-                <img src="{% static 'north/bhindi.jpg' %}" alt="bhindi">
-                <h3>Bhindi</h3>
-                <p>Okras, lady’s finger, or bhindi, is an ancient crop in India, and Bhindi Masala appeared for the first time in the Northern region of India.</p>
-                <p class="price">$12</p>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'north/bhindi.jpg' %}" class="card-img-top" alt="Bhindi Masala">
+                    <div class="card-body">
+                        <h5 class="card-title">Bhindi Masala</h5>
+                        <p class="card-text">Spicy stir-fried okra—a Northern Indian staple dish.</p>
+                    </div>
+                    <div class="card-footer"><small class="text-muted">$10</small></div>
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
             </div>
+
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
