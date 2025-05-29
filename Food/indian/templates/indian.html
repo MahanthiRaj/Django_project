@@ -1,18 +1,24 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8" />
     <title>Indian Cuisine</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="{% static 'style.css' %}" />
 </head>
-<body>
-    <div class="container">
-        <h1>Welcome to the great Indian cuisine</h1>
-        <div class="button-group">
-            <a href="{% url 'andhra' %}"><button>Andhra Dishes</button></a>
-            <a href="{% url 'tamil' %}"><button>Tamil Dishes</button></a>
-            <a href="{% url 'north' %}"><button>North Indian Dishes</button></a>
+<body class="bg-light d-flex flex-column min-vh-100 justify-content-center align-items-center">
+
+    <div class="text-center p-4 bg-white rounded shadow-sm" style="max-width: 400px; width: 90%;">
+        <h1 class="mb-3 fw-bold text-danger">Great Indian Cuisine</h1>
+        <p class="mb-4 text-secondary">Explore the rich flavors of India’s famous regional dishes.</p>
+        <div class="d-grid gap-3">
+            <a href="{% url 'andhra' %}" class="btn btn-outline-danger btn-lg">Andhra Dishes</a>
+            <a href="{% url 'tamil' %}" class="btn btn-outline-success btn-lg">Tamil Dishes</a>
+            <a href="{% url 'north' %}" class="btn btn-outline-primary btn-lg">North Indian Dishes</a>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

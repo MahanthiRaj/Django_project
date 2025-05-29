@@ -1,156 +1,143 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Tamil Cuisine</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
-<body>
-    <div class="container">
-        <h1>Tamil Cuisine Dishes</h1>
-        <p>Welcome to Mouth watering Dravidian Food</p>
-        <img src="{% static 'images/andhra_meal.jpg' %}" alt="Tamil Meal" width="400">
-        <div class="dish-grid">
-            <div class="dish">
-                <img src="{% static 'images/tamil_sambar.jpg' %}" alt="Sambar">
-                <h3>Sambar</h3>
-                <p>South Indian lentil stew with vegetables.</p>
-                <p class="price">₹150</p>
+<body class="tamil-page">
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h1 class="display-4">Tamil Cuisine Dishes</h1>
+            <p class="lead">Welcome to Mouth Watering Dravidian Food</p>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'Tamil/sambar.jpg' %}" class="card-img-top" alt="Sambar">
+                    <div class="card-body">
+                        <h5 class="card-title">Sambar</h5>
+                        <p class="card-text">South Indian lentil stew with vegetables.</p>
+                    </div>
+                    <div class="card-footer"><small class="text-muted">$8</small></div>
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
             </div>
-            <div class="dish">
-                <img src="{% static 'images/tamil_dosa.jpg' %}" alt="Dosa">
-                <h3>Masala Dosa</h3>
-                <p>Crispy dosa with spiced potato filling.</p>
-                <p class="price">₹120</p>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'Tamil/Masala dosa.jpg' %}" class="card-img-top" alt="Masala Dosa">
+                    <div class="card-body">
+                        <h5 class="card-title">Masala Dosa</h5>
+                        <p class="card-text">Crispy dosa with spiced potato filling.</p>
+                    </div>
+                    <div class="card-footer"><small class="text-muted">$10</small></div>
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
             </div>
-            <div class="dish">
-                <img src="{% static 'images/tamil_dosa.jpg' %}" alt="Dosa">
-                <h3>Idli</h3>
-                <p>Idli or idly is a type of savoury rice cake, originating from South India.</p>
-                <p class="price">₹120</p>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'Tamil/-idli.jpg' %}" class="card-img-top" alt="Idli">
+                    <div class="card-body">
+                        <h5 class="card-title">Idli</h5>
+                        <p class="card-text">Soft and fluffy steamed rice cakes, perfect for breakfast.</p>
+                    </div>
+                    <div class="card-footer"><small class="text-muted">$8</small></div>
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
             </div>
-            <div class="dish">
-                <img src="{% static 'images/tamil_dosa.jpg' %}" alt="Dosa">
-                <h3>Appam</h3>
-                <p>An appam or vellayappam is a type of thin pancake originating from South India.</p>
-                <p class="price">₹120</p>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'Tamil/appam.jpg' %}" class="card-img-top" alt="Appam">
+                    <div class="card-body">
+                        <h5 class="card-title">Appam</h5>
+                        <p class="card-text">Thin and soft pancake made with fermented rice batter.</p>
+                    </div>
+                    <div class="card-footer"><small class="text-muted">$10</small></div>
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
             </div>
-            <div class="dish">
-                <img src="{% static 'images/tamil_dosa.jpg' %}" alt="Dosa">
-                <h3>Chicken Chettinad</h3>
-                <p>Chicken Chettinad or Chettinad chicken is a classic Indian recipe, from the cuisine of Chettinad in Tamil Nadu, India.</p>
-                <p class="price">₹120</p>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'Tamil/Chicken Chettinad.jpg' %}" class="card-img-top" alt="Chicken Chettinad">
+                    <div class="card-body">
+                        <h5 class="card-title">Chicken Chettinad</h5>
+                        <p class="card-text">Fiery chicken curry from the Chettinad region of Tamil Nadu.</p>
+                    </div>
+                    <div class="card-footer"><small class="text-muted">$15</small></div>
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
             </div>
-            <div class="dish">
-                <img src="{% static 'images/tamil_dosa.jpg' %}" alt="Dosa">
-                <h3>Pongal</h3>
-                <p>Pongal is a South Indian and Sri Lankan dish of rice cooked in boiling milk.</p>
-                <p class="price">₹120</p>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'Tamil/pongal.jpg' %}" class="card-img-top" alt="Pongal">
+                    <div class="card-body">
+                        <h5 class="card-title">Pongal</h5>
+                        <p class="card-text">Comforting rice dish made with ghee and pepper.</p>
+                    </div>
+                    <div class="card-footer"><small class="text-muted">$8</small></div>
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
             </div>
-            <div class="dish">
-                <img src="{% static 'images/tamil_dosa.jpg' %}" alt="Dosa">
-                <h3>Masala Dosa</h3>
-                <p>Crispy dosa with spiced potato filling.</p>
-                <p class="price">₹120</p>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'Tamil/rasam.jpg' %}" class="card-img-top" alt="Rasam">
+                    <div class="card-body">
+                        <h5 class="card-title">Rasam</h5>
+                        <p class="card-text">Tangy tamarind-based soup with spices and herbs.</p>
+                    </div>
+                    <div class="card-footer"><small class="text-muted">$8</small></div>
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
             </div>
-            <div class="dish">
-                <img src="{% static 'images/tamil_dosa.jpg' %}" alt="Dosa">
-                <h3>Masala Dosa</h3>
-                <p>Crispy dosa with spiced potato filling.</p>
-                <p class="price">₹120</p>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'Tamil/vada.jpg' %}" class="card-img-top" alt="Vada">
+                    <div class="card-body">
+                        <h5 class="card-title">Vada</h5>
+                        <p class="card-text">Crispy and savory South Indian fritter made from lentils.</p>
+                    </div>
+                    <div class="card-footer"><small class="text-muted">$8</small></div>
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
             </div>
-            <div class="dish">
-                <img src="{% static 'images/tamil_dosa.jpg' %}" alt="Dosa">
-                <h3>Masala Dosa</h3>
-                <p>Crispy dosa with spiced potato filling.</p>
-                <p class="price">₹120</p>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'Tamil/parota.jpg' %}" class="card-img-top" alt="Kothu Parota">
+                    <div class="card-body">
+                        <h5 class="card-title">Kothu Parota</h5>
+                        <p class="card-text">Shredded parota stir-fried with spicy sauce and vegetables.</p>
+                    </div>
+                    <div class="card-footer"><small class="text-muted">$10</small></div>
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
             </div>
-            <div class="dish">
-                <img src="{% static 'images/tamil_dosa.jpg' %}" alt="Dosa">
-                <h3>Masala Dosa</h3>
-                <p>Crispy dosa with spiced potato filling.</p>
-                <p class="price">₹120</p>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'Tamil/Uttapam.jpg' %}" class="card-img-top" alt="Uttapam">
+                    <div class="card-body">
+                        <h5 class="card-title">Uttapam</h5>
+                        <p class="card-text">Thick dosa topped with vegetables like tomato and onion.</p>
+                    </div>
+                    <div class="card-footer"><small class="text-muted">$10</small></div>
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
             </div>
+
         </div>
     </div>
-</body>
-</html>
 
-
-{% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Tamil Cuisine</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}" />
-</head>
-<body>
-    <div class="container">
-        <h1>Tamil Cuisine Dishes</h1>
-        <p>Welcome to Mouth watering Dravidian Food</p>
-        <img src="{% static 'images/andhra_meal.jpg' %}" alt="Tamil Meal" width="400">
-        <div class="dish-grid">
-            <div class="dish">
-                <img src="{% static 'images/andhra_biryani.jpg' %}" alt="Andhra Biryani">
-                <h2>Andhra Chicken Biryani</h2>
-                <p>Spicy rice dish with Andhra flavors.</p>
-                <p class="price">₹250</p>
-            </div>
-            <div class="dish">
-                <img src="{% static 'images/andhra_chicken.jpg' %}" alt="Andhra Chicken Curry">
-                <h3>Chepala Pulusu</h3>
-                <p>tangy tamarind juice and earthy masalas blend with local caught fish</p>
-                <p class="price">₹270</p>
-            </div>
-            <div class="dish">
-                <img src="{% static 'images/gongura_mutton.jpg' %}" alt="Gongura Mutton">
-                <h2>Natu Kodi Iguru</h2>
-                <p>rich and hearty curry is a popular staple in many Andhra households..</p>
-                <p class="price">₹320</p>
-            </div>
-            <div class="dish">
-                <img src="{% static 'images/pesarattu.jpg' %}" alt="Pesarattu">
-                <h2>Korameenu Vepudu</h2>
-                <p>deliciously spicy Korameenu Vepudu, a traditional Murrel fish fry.</p>
-                <p class="price">₹130</p>
-            </div>
-            <div class="dish">
-                <img src="{% static 'images/ulavacharu.jpg' %}" alt="Ulavacharu">
-                <h2>Gongura Mutton</h2>
-                <p>The earthy flavours of mutton blend gorgeously with the piquant sourness of Gongura.</p>
-                <p class="price">₹180</p>
-            </div>
-            <div class="dish">
-                <img src="{% static 'images/andhra_chicken.jpg' %}" alt="Andhra Chicken Curry">
-                <h2>Pulihora</h2>
-                <p>Pulihora is a spicy and tangy rice preparation made with tamarind paste as the main ingredient, mixed with cooked rice.</p>
-                <p class="price">₹270</p>
-            </div>
-            <div class="dish">
-                <img src="{% static 'images/andhra_chicken.jpg' %}" alt="Andhra Chicken Curry">
-                <h2>Gutti Vankaya Koora</h2>
-                <p>spicy stuffed eggplant curry.</p>
-                <p class="price">₹270</p>
-            </div>
-            <div class="dish">
-                <img src="{% static 'images/andhra_chicken.jpg' %}" alt="Andhra Chicken Curry">
-                <h3>Dondakaya fry</h3>
-                <p>The ivy gourds are thinly sliced and then stir-fried with nuts and spices until they achieve a wonderful blend.</p>
-                <p class="price">₹270</p>
-            </div>
-            <div class="dish">
-                <img src="{% static 'images/andhra_chicken.jpg' %}" alt="Andhra Chicken Curry">
-                <h3>Ulava Charu</h3>
-                <p>Ulava Charu is also celebrated for its nutritional benefits.</p>
-                <p class="price">₹270</p>
-            </div>
-            <div class="dish">
-                <img src="{% static 'images/andhra_chicken.jpg' %}" alt="Andhra Chicken Curry">
-                <h3>Royyala vepudu</h3>
-                <p>Royyala Veppudu, a renowned dish hailing from Andhra Pradesh, is a culinary delight that seafood enthusiasts absolutely adore.</p>
-                <p class="price">₹270</p>
-            </div>
-        </div>
-    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

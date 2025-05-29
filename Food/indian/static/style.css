@@ -1,5 +1,5 @@
-body {
-    background-image: url("/static/login_image.jpg");
+body.login-page {
+    background-image: url("/static/login_page.jpg");
     background-size: auto;
     background-position: center;
     margin: 0;
@@ -7,39 +7,108 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.container {
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
     text-align: center;
-    padding-top: 100px;
-    color: red;
 }
 
-h1 {
-    font-size: 48px;
-    font-weight: bold;
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
-.dish-image {
-    display: block;
-    margin: 10px auto;
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-}
-
-
-
-.button-group {
-    margin-top: 30px;
-}
-
-.button-group button {
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
     border: none;
-    background-color: white;
+    border-radius: 5px;
+    font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+
+button[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+p[style] {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+body{
+    background-color: white; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    font-weight: 700;
+    color: black;
+}
+
+.card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border-radius: 0.75rem;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-top {
+    object-fit: cover;
+    height: 200px;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.card-text {
+    font-size: 0.95rem;
+}
+
+.card-footer {
+    background-color: transparent;
+    border-top: none;
+    font-weight: bold;
+    color: green; /* Bootstrap green */
+}
+
+.text-center p.lead {
+    font-style: italic;
+    color: grey;
+}
+
