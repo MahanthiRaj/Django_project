@@ -12,5 +12,5 @@ urlpatterns = [
     path('tamil/',tamil, name ='tamil'),
     path('north/',northindian, name ='north'),
     path('cuisine/',Indiancuisine, name ='indian'),
-    path('login/', login_view, name = 'Login'),
+    path('login/', login_view, name = 'Login')
 ]

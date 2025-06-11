@@ -8,21 +8,81 @@
     <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body class="andhra-page">
-    
+
+    <div class="mt-3">
+        <a href="/cuisine/" class="btn btn-secondary">Back to Main Page</a>
+    </div>
     <div class="container py-5">
+
         <div class="text-center mb-5">
             <h1 class="display-4">Andhra Cuisine Dishes</h1>
             <p class="lead">Welcome to spicy and flavorful Andhra food</p>
         </div>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
 
+        <div class="d-flex flex-column justify-content-center align-items-center">
+            <h2>Check Weather</h2>
+            
+            <form class="weather-form d-flex flex-column align-items-center" method="POST" action="/andhra/">
+                {% csrf_token %}
+                <input type="text" name="city" placeholder="Enter city name" class="form-control mb-3" style="width: 250px;">
+                <button type="submit" class="btn btn-primary">Get Weather</button>
+            </form>
+        
+            {% if temp_c %}
+            <div class="mt-3 text-center">
+                <h4>Weather for {{ city }}</h4>
+                <ul class="list-unstyled">
+                    <li><strong>Temperature:</strong> {{ temp_c }} °C</li>
+                    <li><strong>Wind Speed:</strong> {{ wind_mph }} mph</li>
+                    <li><strong>Humidity:</strong> {{ humidity }} %</li>
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% if category == "cold" %}
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'Andhra/pani.jpg' %}" class="card-img-top" alt="Pani Puri">
+                    <div class="card-body">
+                        <h5 class="card-title">Pani Puri</h5>
+                        <p class="card-text">Crispy hollow puris filled with spicy tangy water, potatoes, and chutneys a burst of flavor in every bite</p>
+                    </div>
+                    <div class="card-footer"><small class="text-muted">$10</small></div>
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'Andhra/mirchi.jpg' %}" class="card-img-top" alt="Mirchi Bajji">
+                    <div class="card-body">
+                        <h5 class="card-title">Mirchi Bajji</h5>
+                        <p class="card-text">Spicy green chilies dipped in gram flour batter and deep-fried to golden perfection a crispy street food favorite</p>
+                    </div>
+                    <div class="card-footer"><small class="text-muted">$10</small></div>
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'Andhra/onion.jpg' %}" class="card-img-top" alt="Onion Pakoda">
+                    <div class="card-body">
+                        <h5 class="card-title">Onion Pakodi</h5>
+                        <p class="card-text">Crispy, golden-fried onion fritters seasoned with spices the perfect crunchy snack</p>
+                    </div>
+                    <div class="card-footer"><small class="text-muted">$10</small></div>
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
+            </div>
             <div class="col">
                 <div class="card h-100">
                     <img src="{% static 'Andhra/chicken bir.jpg' %}" class="card-img-top" alt="Andhra Chicken Biryani">
                     <div class="card-body">
                         <h5 class="card-title">Andhra Chicken Biryani</h5>
                         <p class="card-text">Spicy rice dish with Andhra flavors.</p>
-                        
                     </div>
                     <div class="card-footer"><small class="text-muted">$10</small></div>
                     <a href="#" class="btn btn-success">Add to Cart</a>
@@ -35,86 +95,8 @@
                     <div class="card-body">
                         <h5 class="card-title">Chepala Pulusu</h5>
                         <p class="card-text">Tangy tamarind juice and earthy masalas blend with locally caught fish.</p>
-                       
                     </div>
                     <div class="card-footer"><small class="text-muted">$15</small></div>
-                    <a href="#" class="btn btn-success">Add to Cart</a>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100">
-                    <img src="{% static 'Andhra/natukodi.jpg' %}" class="card-img-top" alt="Natu Kodi Iguru">
-                    <div class="card-body">
-                        <h5 class="card-title">Natu Kodi Iguru</h5>
-                        <p class="card-text">A rich and hearty curry, popular in many Andhra households.</p>
-                        
-                    </div>
-                    <div class="card-footer"><small class="text-muted">$20</small></div>
-                    <a href="#" class="btn btn-success">Add to Cart</a>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100">
-                    <img src="{% static 'Andhra/koramenu.jpg' %}" class="card-img-top" alt="Korameenu Vepudu">
-                    <div class="card-body">
-                        <h5 class="card-title">Korameenu Vepudu</h5>
-                        <p class="card-text">Deliciously spicy Murrel fish fry, a regional favorite.</p>
-                        
-                    </div>
-                    <div class="card-footer"><small class="text-muted">$20</small></div>
-                    <a href="#" class="btn btn-success">Add to Cart</a>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100">
-                    <img src="{% static 'Andhra/mutton.jpg' %}" class="card-img-top" alt="Gongura Mutton">
-                    <div class="card-body">
-                        <h5 class="card-title">Gongura Mutton</h5>
-                        <p class="card-text">Mutton cooked with tangy gongura leaves—spicy and satisfying.</p>
-                        
-                    </div>
-                    <div class="card-footer"><small class="text-muted">$15</small></div>
-                    <a href="#" class="btn btn-success">Add to Cart</a>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100">
-                    <img src="{% static 'Andhra/puli.jpg' %}" class="card-img-top" alt="Pulihora">
-                    <div class="card-body">
-                        <h5 class="card-title">Pulihora</h5>
-                        <p class="card-text">A spicy, tangy rice dish made with tamarind paste and tempered spices.</p>
-                        
-                    </div>
-                    <div class="card-footer"><small class="text-muted">$12</small></div>
-                    <a href="#" class="btn btn-success">Add to Cart</a>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100">
-                    <img src="{% static 'Andhra/gutti.jpg' %}" class="card-img-top" alt="Gutti Vankaya Koora">
-                    <div class="card-body">
-                        <h5 class="card-title">Gutti Vankaya Koora</h5>
-                        <p class="card-text">Spicy stuffed eggplant curry with roasted masala.</p>
-                        
-                    </div>
-                    <div class="card-footer"><small class="text-muted">$10</small></div>
-                    <a href="#" class="btn btn-success">Add to Cart</a>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100">
-                    <img src="{% static 'Andhra/donda.jpg' %}" class="card-img-top" alt="Dondakaya Fry">
-                    <div class="card-body">
-                        <h5 class="card-title">Dondakaya Fry</h5>
-                        <p class="card-text">Ivy gourd stir-fried with spices and crunchy nuts.</p>  
-                    </div>
-                    <div class="card-footer"><small class="text-muted">$8</small></div>
                     <a href="#" class="btn btn-success">Add to Cart</a>
                 </div>
             </div>
@@ -125,7 +107,6 @@
                     <div class="card-body">
                         <h5 class="card-title">Ulava Charu</h5>
                         <p class="card-text">A nourishing and flavorful horse gram stew.</p>
-                        
                     </div>
                     <div class="card-footer"><small class="text-muted">$15</small></div>
                     <a href="#" class="btn btn-success">Add to Cart</a>
@@ -143,7 +124,95 @@
                     <a href="#" class="btn btn-success">Add to Cart</a>
                 </div>
             </div>
+            {% endif %}
+            {% if category == "sunny" %}
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'Andhra/carameal matcha.jpg' %}" class="card-img-top" alt="carameal matcha">
+                    <div class="card-body">
+                        <h5 class="card-title">Carameal matcha</h5>
+                        <p class="card-text">If you’re a fan of the smooth, earthy flavor of matcha and the sweet, rich taste of caramel, you’re in for a treat! This Matcha Caramel Iced Latte is the perfect blend of these two flavors, creating a refreshing and indulgent drink that's perfect for any time of the day.</p>
+                    </div>
+                    <div class="card-footer"><small class="text-muted">$10</small></div>
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
+            </div>
 
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'Andhra/sugarcane-juice.jpg' %}" class="card-img-top" alt="sugarcane juice">
+                    <div class="card-body">
+                        <h5 class="card-title">Sugarcane Juice</h5>
+                        <p class="card-text">Cool, crisp, and naturally sweet — our sugarcane juice is freshly pressed from juicy sugarcane stalks and served chilled for the ultimate refreshing experience.</p>
+                    </div>
+                    <div class="card-footer"><small class="text-muted">$10</small></div>
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'Andhra/Watermelon-Juice.jpg' %}" class="card-img-top" alt="Watermelon-Juice">
+                    <div class="card-body">
+                        <h5 class="card-title">Watermelon Juice</h5>
+                        <p class="card-text">Naturally hydrating and deliciously sweet, our watermelon juice is made from freshly cut ripe melons and served.</p>
+                    </div>
+                    <div class="card-footer"><small class="text-muted">$8</small></div>
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
+            </div>
+            {% endif %}
+
+            {% if category == "hot" %}
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'Andhra/chocolate.jpg' %}" class="card-img-top" alt="Andhra Chicken Biryani">
+                    <div class="card-body">
+                        <h5 class="card-title">Chocolate Icecream</h5>
+                        <p class="card-text">Rich, velvety dark chocolate churned into a creamy indulgent scoop for true chocolate lovers</p>
+                    </div>
+                    <div class="card-footer"><small class="text-muted">$10</small></div>
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'Andhra/kulfi.jpg' %}" class="card-img-top" alt="Kulfi">
+                    <div class="card-body">
+                        <h5 class="card-title">Kulfi</h5>
+                        <p class="card-text">A traditional Indian frozen dessert made with slow-cooked milk, nuts, and cardamom — dense, creamy, and delicious..</p>
+                    </div>
+                    <div class="card-footer"><small class="text-muted">$10</small></div>
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'Andhra/brownie.jpg' %}" class="card-img-top" alt="brownie">
+                    <div class="card-body">
+                        <h5 class="card-title">Brownie</h5>
+                        <p class="card-text">Fudgy, rich chocolate squares with a crackly top pure indulgence in every bite</p>
+                    </div>
+                    <div class="card-footer"><small class="text-muted">$10</small></div>
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'Andhra/pastery.jpg' %}" class="card-img-top" alt="pastery">
+                    <div class="card-body">
+                        <h5 class="card-title">Chocolate Pastery</h5>
+                        <p class="card-text">Moist layers of chocolate sponge and silky ganache, crafted into a decadent dessert slice</p>
+                    </div>
+                    <div class="card-footer"><small class="text-muted">$8</small></div>
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
+            </div>
+            {% endif %}
         </div>
     </div>
 
