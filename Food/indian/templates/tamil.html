@@ -8,13 +8,38 @@
     <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body class="tamil-page">
+    <div class="mt-3">
+        <a href="/cuisine/" class="btn btn-secondary">Back to Main Page</a>
+    </div>
     <div class="container py-5">
         <div class="text-center mb-5">
             <h1 class="display-4">Tamil Cuisine Dishes</h1>
             <p class="lead">Welcome to Mouth Watering Dravidian Food</p>
         </div>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
 
+        <div class="d-flex flex-column justify-content-center align-items-center">
+            <h2>Check Weather</h2>
+            
+            <form class="weather-form d-flex flex-column align-items-center" method="POST" action="/tamil/">
+                {% csrf_token %}
+                <input type="text" name="city" placeholder="Enter city name" class="form-control mb-3" style="width: 250px;">
+                <button type="submit" class="btn btn-primary">Get Weather</button>
+            </form>
+        
+            {% if temp_c %}
+            <div class="mt-3 text-center">
+                <h4>Weather for {{ city }}</h4>
+                <ul class="list-unstyled">
+                    <li><strong>Temperature:</strong> {{ temp_c }} °C</li>
+                    <li><strong>Wind Speed:</strong> {{ wind_mph }} mph</li>
+                    <li><strong>Humidity:</strong> {{ humidity }} %</li>
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+        
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            {% if category == "cold" %}
             <div class="col">
                 <div class="card h-100">
                     <img src="{% static 'Tamil/sambar.jpg' %}" class="card-img-top" alt="Sambar">
@@ -50,7 +75,8 @@
                     <a href="#" class="btn btn-success">Add to Cart</a>
                 </div>
             </div>
-
+            {% endif %}
+            {% if category == "sunny" %}
             <div class="col">
                 <div class="card h-100">
                     <img src="{% static 'Tamil/appam.jpg' %}" class="card-img-top" alt="Appam">
@@ -86,13 +112,14 @@
                     <a href="#" class="btn btn-success">Add to Cart</a>
                 </div>
             </div>
-
+            {% endif %}
+            {% if category == "hot" %}
             <div class="col">
                 <div class="card h-100">
-                    <img src="{% static 'Tamil/rasam.jpg' %}" class="card-img-top" alt="Rasam">
+                    <img src="{% static 'Tamil/buttermilk.jpg' %}" class="card-img-top" alt="buttermilk">
                     <div class="card-body">
-                        <h5 class="card-title">Rasam</h5>
-                        <p class="card-text">Tangy tamarind-based soup with spices and herbs.</p>
+                        <h5 class="card-title">Butter Milk</h5>
+                        <p class="card-text">A cool, tangy yogurt-based drink spiced with herbs — perfect for refreshing and soothing the palate</p>
                     </div>
                     <div class="card-footer"><small class="text-muted">$8</small></div>
                     <a href="#" class="btn btn-success">Add to Cart</a>
@@ -101,10 +128,10 @@
 
             <div class="col">
                 <div class="card h-100">
-                    <img src="{% static 'Tamil/vada.jpg' %}" class="card-img-top" alt="Vada">
+                    <img src="{% static 'Tamil/curd.jpg' %}" class="card-img-top" alt="curd rice">
                     <div class="card-body">
-                        <h5 class="card-title">Vada</h5>
-                        <p class="card-text">Crispy and savory South Indian fritter made from lentils.</p>
+                        <h5 class="card-title">Curd Rice</h5>
+                        <p class="card-text">Comforting South Indian dish made with creamy curd, soft rice, and tempered spices — cool, light, and satisfying.</p>
                     </div>
                     <div class="card-footer"><small class="text-muted">$8</small></div>
                     <a href="#" class="btn btn-success">Add to Cart</a>
@@ -113,28 +140,16 @@
 
             <div class="col">
                 <div class="card h-100">
-                    <img src="{% static 'Tamil/parota.jpg' %}" class="card-img-top" alt="Kothu Parota">
+                    <img src="{% static 'Tamil/payasam.jpg' %}" class="card-img-top" alt="payasam">
                     <div class="card-body">
-                        <h5 class="card-title">Kothu Parota</h5>
-                        <p class="card-text">Shredded parota stir-fried with spicy sauce and vegetables.</p>
+                        <h5 class="card-title">Payasam</h5>
+                        <p class="card-text">A rich and creamy South Indian dessert made with milk, rice or vermicelli, and sweetened with jaggery or sugar..</p>
                     </div>
                     <div class="card-footer"><small class="text-muted">$10</small></div>
                     <a href="#" class="btn btn-success">Add to Cart</a>
                 </div>
             </div>
-
-            <div class="col">
-                <div class="card h-100">
-                    <img src="{% static 'Tamil/Uttapam.jpg' %}" class="card-img-top" alt="Uttapam">
-                    <div class="card-body">
-                        <h5 class="card-title">Uttapam</h5>
-                        <p class="card-text">Thick dosa topped with vegetables like tomato and onion.</p>
-                    </div>
-                    <div class="card-footer"><small class="text-muted">$10</small></div>
-                    <a href="#" class="btn btn-success">Add to Cart</a>
-                </div>
-            </div>
-
+            {% endif %}
         </div>
     </div>
 

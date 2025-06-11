@@ -15,3 +15,8 @@ class northindian(models.Model):
     masalaused= models.CharField(max_length = 255)
     vegitablesused = models.CharField(max_length = 255)  
   
+class cities(models.Model):
+    name = models.CharField(max_length = 100)
+    
+    def __str__(self):
+        return self.name
