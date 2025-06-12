@@ -29,38 +29,30 @@ app = FastAPI()
 
 
 
-products = {
-    1: {"name": "Laptop", "price": 999.99},
-    2: {"name": "Phone", "price": 499.99}
-}
 
-class Product(BaseModel):
+class Item(BaseModel):
     name: str
     price: float
 
-@app.get("/products")
-async def get_all():
-    return {"products": products}
+items = {
+    1: {"name": "Example", "price": 9.99}
+}
 
+@app.get("/items/{item_id}", response_model=Item)
+async def get_item(item_id: int):
+    return items[item_id]
 
-@app.post("/products/{product_id}")
-async def add_product(product_id: int, product: Product):
-    if product_id in products:
-        return {"error": "Product ID already exists"}
-    products[product_id] = product.dict()
-    return {"message": "Product added", "product": product}
+@app.post("/items/", response_model=Item)
+async def create_item(item: Item):
+    return item
 
-@app.put("/products/{product_id}")
-async def update_product(product_id: int, product: Product):
-    if product_id not in products:
-        return {"error": "Product not found"}
-    products[product_id] = product.dict()
-    return {"message": "Product updated", "product": product}
+@app.put("/items/{item_id}", response_model=Item)
+async def update_item(item_id: int, item: Item):
+    items[item_id] = item.dict()
+    return item
 
-@app.delete("/products/{product_id}")
-async def delete_product(product_id: int):
-    if product_id in products:
-        deleted = products.pop(product_id)
-        return {"message": "Product deleted", "product": deleted}
-    return {"error": "Product not found"}
+@app.delete("/items/{item_id}")
+async def delete_item(item_id: int):
+    deleted = items.pop(item_id)
+    return {"deleted": deleted}
 
